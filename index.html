@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Japón 2026 - Guía de Viaje</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- PWA Manifest Link -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Web App Manifest capability for mobile shortcut -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0b111e">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <span class="jp-char">日本</span>
+                <h1>Japón 2026</h1>
+            </div>
+            
+            <!-- Dual Clock Widget -->
+            <div class="clock-widget" id="clock-widget">
+                <div class="clock-item">
+                    <span class="clock-label">ESP</span>
+                    <span id="clock-esp" class="clock-time">--:--</span>
+                </div>
+                <div class="clock-divider">|</div>
+                <div class="clock-item">
+                    <span class="clock-label">JAP</span>
+                    <span id="clock-jap" class="clock-time">--:--</span>
+                </div>
+            </div>
+
+            <button id="theme-toggle" class="icon-btn" aria-label="Cambiar tema">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+        
+        <!-- SECTION 1: ITINERARIO -->
+        <section id="tab-itinerario" class="tab-content active">
+            <!-- Day Selector Horizontal Scroll -->
+            <div class="day-selector-container">
+                <div class="day-selector" id="day-selector">
+                    <button class="day-tab active" data-day="1"><span>D1</span><small>17 Ago</small></button>
+                    <button class="day-tab" data-day="2"><span>D2</span><small>18 Ago</small></button>
+                    <button class="day-tab" data-day="3"><span>D3</span><small>19 Ago</small></button>
+                    <button class="day-tab" data-day="4"><span>D4</span><small>20 Ago</small></button>
+                    <button class="day-tab" data-day="5"><span>D5</span><small>21 Ago</small></button>
+                    <button class="day-tab" data-day="6"><span>D6</span><small>22 Ago</small></button>
+                    <button class="day-tab" data-day="7"><span>D7</span><small>23 Ago</small></button>
+                    <button class="day-tab" data-day="8"><span>D8</span><small>24 Ago</small></button>
+                    <button class="day-tab" data-day="9"><span>D9</span><small>25 Ago</small></button>
+                    <button class="day-tab" data-day="10"><span>D10</span><small>26 Ago</small></button>
+                    <button class="day-tab" data-day="11"><span>D11</span><small>27 Ago</small></button>
+                    <button class="day-tab" data-day="12"><span>D12</span><small>28 Ago</small></button>
+                    <button class="day-tab" data-day="13"><span>D13</span><small>29 Ago</small></button>
+                </div>
+            </div>
+
+            <!-- Days Cards Container -->
+            <div class="days-container" id="days-container">
+                
+                <!-- DÍA 1 -->
+                <div class="day-card active" id="day-card-1" data-image="images/tokyo.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 1 • Lunes 17 de Agosto</span>
+                        <h2>Llegada a Tokio 🗼</h2>
+                        <p class="day-subtitle">Primer contacto y relax en Ikebukuro</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-1"></div></div>
+                        <span class="progress-text" id="text-1">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d1-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">16:50</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Aterrizaje en Haneda:</strong> Llegada al Aeropuerto Internacional de Haneda a las 16:50.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Terminal+3" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Mapa
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d1-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Check-in en Hotel:</strong> Desplazamiento e instalación en el <span class="hotel-highlight" data-hotel="otsuka">APA Hotel Yamanote Otsuka Ekimae Tower</span>, situado en Toshima cerca del barrio de Ikebukuro.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=APA+Hotel+Yamanote+Otsuka+Ekimae+Tower" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Mapa
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d1-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Paseo por Ikebukuro:</strong> Paseo nocturno de toma de contacto por la zona de Ikebukuro para cenar, visitar el entorno de Sunshine City o las calles cercanas a la estación.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Sunshine+City+Ikebukuro" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Mapa
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="1" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 2 -->
+                <div class="day-card" id="day-card-2" data-image="images/tokyo.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 2 • Martes 18 de Agosto</span>
+                        <h2>Contrastes de Tokio ⛩️🏙️</h2>
+                        <p class="day-subtitle">Tradición en Harajuku, rascacielos en Shinjuku y el cruce de Shibuya</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-2"></div></div>
+                        <span class="progress-text" id="text-2">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d2-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Harajuku & Meiji Jingu:</strong> Visita al santuario Meiji Jingu en el parque Yoyogi, bajando luego por la famosa Takeshita Dori en Harajuku hasta llegar a la calle Omotesando.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Meiji+Jingu+Shrine" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Meiji Jingu
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Takeshita Dori
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d2-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mediodía</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Shinjuku:</strong> Recorrido por Shinjuku, comenzando por el parque Shinjuku Gyoen y paseando por las zonas de Kabukicho y los grandes almacenes.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Shinjuku Gyoen
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Kabukicho+Shinjuku" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Kabukicho
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d2-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde/Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Shibuya:</strong> Desplazamiento a Shibuya para cruzar el icónico paso de peatones, ver la estatua de Hachiko y subir a algún mirador de la zona.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Cruce Shibuya
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shibuya+Sky" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Shibuya Sky
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="2" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 3 -->
+                <div class="day-card" id="day-card-3" data-image="images/tokyo.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 3 • Miércoles 19 de Agosto</span>
+                        <h2>Tradición y cultura Otaku 🏮🎮</h2>
+                        <p class="day-subtitle">De los templos clásicos de Asakusa al neón geek de Akihabara</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-3"></div></div>
+                        <span class="progress-text" id="text-3">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d3-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Asakusa:</strong> Visita al barrio de Asakusa, cruzando la puerta Kaminarimon para ver el templo Senso-ji y el centro cultural.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Senso-ji+Temple+Asakusa" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Senso-ji
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d3-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mediodía</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Ueno & Ameyoko:</strong> Paseo por el parque de Ueno y almuerzo en la concurrida calle comercial de Ameyoko.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ueno+Park+Tokyo" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Parque Ueno
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ameyoko+Shopping+Street" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Ameyoko
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d3-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Akihabara:</strong> Exploración de las tiendas de electrónica, videojuegos y manga en Akihabara.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Akihabara+Electric+Town" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Akihabara
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d3-4">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Tokyo SkyTree:</strong> Ver o subir a la SkyTree de noche.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        SkyTree
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="3" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 4 -->
+                <div class="day-card" id="day-card-4" data-image="images/kamakura.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 4 • Jueves 20 de Agosto</span>
+                        <h2>Excursión a Kamakura 🌊🧘‍♂️</h2>
+                        <p class="day-subtitle">Buda gigante de bronce, templos costeros y paseo por la playa</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-4"></div></div>
+                        <span class="progress-text" id="text-4">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d4-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 22 2 2M22 2 2 22"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Todo el día</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="4">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Viaje a Kamakura:</strong> Viaje de ida y vuelta en tren a Kamakura para pasar el día completo.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d4-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana/Mediodía</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="4">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Ruta de Templos:</strong> Ruta por la ciudad costera visitando el Gran Buda (Daibutsu) de bronce, el templo Hasedera y el importante santuario Tsurugaoka Hachimangu.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Great+Buddha+of+Kamakura" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Gran Buda
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Hasedera+Temple+Kamakura" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Hasedera
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Tsurugaoka+Hachimangu+Shrine" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Hachimangu
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d4-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="4">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Playa & Regreso:</strong> Ir a la playa de Kamakura. Regreso por la tarde para pasar la última noche en el hotel de Otsuka en Tokio.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Yuigahama+Beach+Kamakura" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Playa Yuigahama
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="4" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 5 -->
+                <div class="day-card" id="day-card-5" data-image="images/hiroshima.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 5 • Viernes 21 de Agosto</span>
+                        <h2>Hiroshima y el Torii del Agua ⛩️🕊️</h2>
+                        <p class="day-subtitle">El gran torii flotante y el Parque Conmemorativo de la Paz</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-5"></div></div>
+                        <span class="progress-text" id="text-5">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d5-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 22 2 2M22 2 2 22"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="5">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Viaje a Hiroshima:</strong> Salida en tren bala (Shinkansen) a primera hora en dirección a Hiroshima.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d5-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mediodía</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="5">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Ferry a Miyajima:</strong> Enlace en ferry hasta la isla de Miyajima para visitar el Santuario Itsukushima y ver de cerca su famoso gran torii flotante en el agua.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Itsukushima+Shrine+Miyajima" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Santuario Itsukushima
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d5-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde/Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="5">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Parque de la Paz & Alojamiento:</strong> Regreso al centro de Hiroshima para visitar el Parque Conmemorativo de la Paz y la Cúpula de la Bomba Atómica. Noche de alojamiento en el <span class="hotel-highlight" data-hotel="hiroshima">WeBase Hiroshima</span>, situado en el centro.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Hiroshima+Peace+Memorial+Park" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Parque de la Paz
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="5" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 6 -->
+                <div class="day-card" id="day-card-6" data-image="images/osaka.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 6 • Sábado 22 de Agosto</span>
+                        <h2>Llegada a Osaka y luces de neón 🏯🎆</h2>
+                        <p class="day-subtitle">El imponente castillo y la vibrante locura de Dotonbori</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-6"></div></div>
+                        <span class="progress-text" id="text-6">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d6-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="6">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Viaje a Osaka:</strong> Viaje en tren desde Hiroshima hasta Osaka e instalación en el <span class="hotel-highlight" data-hotel="osaka">APA Hotel & Resort Midosuji Hommachi Ekimae Tower</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d6-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="6">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Castillo de Osaka:</strong> Visita a los imponentes terrenos del Castillo de Osaka.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Osaka+Castle" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Castillo Osaka
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d6-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="6">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Namba & Dotonbori:</strong> Exploración del animado barrio de Namba y cena bajo los emblemáticos carteles luminosos del canal de Dotonbori. Y fiesta.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Dotonbori
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="6" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 7 -->
+                <div class="day-card" id="day-card-7" data-image="images/osaka.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 7 • Domingo 23 de Agosto</span>
+                        <h2>Osaka al completo 🛍️🌇</h2>
+                        <p class="day-subtitle">Tesoros retro en Den-den Town y vistas de infarto</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-7"></div></div>
+                        <span class="progress-text" id="text-7">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item optional-item" data-id="d7-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana (Opcional)</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="7">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p class="optional-tag">✨ OPCIONAL SI HAY GANAS Y NO ESTÁIS MUERTOS</p>
+                                <p><strong>Shitennoji & Abeno Harukas:</strong> Visitar el Templo Shitennoji, uno de los más antiguos de Japón, y aprovechar para subir al rascacielos Abeno Harukas para tener una vista panorámica espectacular.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shitennoji+Temple+Osaka" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Shitennoji
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Abeno+Harukas+Osaka" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Abeno Harukas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d7-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mediodía/Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="7">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Den-den Town (Nippombashi):</strong> Explorar a fondo las tiendas buscando auténticos tesoros del retro gaming (Nintendo), o echar un vistazo a los escaparates de relojería para cazar alguna pieza mecánica o modelos automáticos de Seiko.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Den+Den+Town+Osaka" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Den-den Town
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d7-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Media Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="7">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Shinsekai:</strong> Acercarse al barrio retro de Shinsekai para pasear bajo la torre Tsutenkaku.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Shinsekai
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d7-4">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Atardecer</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="7">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Umeda Sky Building & Cena:</strong> Subir al Umeda Sky Building para ver el atardecer antes de volver a la zona de Dotonbori para cenar.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Umeda+Sky+Building" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Umeda Sky
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="7" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 8 -->
+                <div class="day-card" id="day-card-8" data-image="images/kyoto.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 8 • Lunes 24 de Agosto</span>
+                        <h2>Naturaleza y Santuarios de Kioto ⛩️🎋</h2>
+                        <p class="day-subtitle">Los toriis de Fushimi Inari y la magia de Arashiyama</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-8"></div></div>
+                        <span class="progress-text" id="text-8">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d8-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="8">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Traslado & Fushimi Inari:</strong> Traslado en tren a Kioto e instalación en el <span class="hotel-highlight" data-hotel="kyoto">Hotel M's Plus Shijo Omiya</span>. Recorrer con tranquilidad los interminables caminos de toriis rojos del santuario Fushimi Inari Taisha.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Fushimi Inari
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d8-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="8">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Arashiyama:</strong> Desplazamiento al oeste de Kioto para caminar por el famoso Bosque de Bambú de Arashiyama y recorrer los jardines del templo Tenryu-ji.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Bambú Arashiyama
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Tenryuji+Temple+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Templo Tenryu-ji
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="8" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 9 -->
+                <div class="day-card" id="day-card-9" data-image="images/kyoto.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 9 • Martes 25 de Agosto</span>
+                        <h2>Kyoto Clásico 🌸🛖</h2>
+                        <p class="day-subtitle">Vistas desde Kiyomizu-dera, el Pabellón de Oro y el encanto de Gion</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-9"></div></div>
+                        <span class="progress-text" id="text-9">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d9-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="9">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Higashiyama (Con FreeTour):</strong> Recorrido por el distrito de Higashiyama, culminando con las vistas desde el templo Kiyomizu-Dera.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Kiyomizudera+Temple+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Kiyomizu-dera
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d9-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="9">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Kinkaku-ji:</strong> Visita al brillante Kinkaku-ji (Pabellón de Oro).</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Pabellón de Oro
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d9-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="9">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Gion & Pontocho:</strong> Caminata junto al río Kamogawa y exploración de los distritos tradicionales de Gion y Pontocho, prestando atención a la posible aparición de geishas.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Gion+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Gion
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Pontocho+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Pontocho
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="9" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 10 -->
+                <div class="day-card" id="day-card-10" data-image="images/nara.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 10 • Miércoles 26 de Agosto</span>
+                        <h2>Kyoto y Nara 🦌🪵</h2>
+                        <p class="day-subtitle">El Pabellón de Plata y los ciervos de Nara</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-10"></div></div>
+                        <span class="progress-text" id="text-10">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d10-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="10">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Ginkaku-ji:</strong> A primera hora, visitar el Ginkaku-ji (Pabellón de Plata) en Kioto para disfrutar de sus jardines zen con la luz de la mañana.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ginkakuji+Temple+Kyoto" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Pabellón de Plata
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d10-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mediodía/Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="10">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Excursión a Nara:</strong> Tomar el tren hacia Nara. Pasaréis el resto del día paseando por el inmenso parque junto a los ciervos y visitando el colosal Templo Todai-ji.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Nara+Park" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Parque de Nara
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Todai-ji+Temple+Nara" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Templo Todai-ji
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d10-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="10">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Regreso:</strong> Regreso al hotel en Kioto para descansar en vuestra última noche en la ciudad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="10" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 11 -->
+                <div class="day-card" id="day-card-11" data-image="images/tokyo.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 11 • Jueves 27 de Agosto</span>
+                        <h2>Regreso a Tokio 🗼</h2>
+                        <p class="day-subtitle">Torre de Tokio y el gran reloj de Ghibli</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-11"></div></div>
+                        <span class="progress-text" id="text-11">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d11-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mediodía</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="11">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Regreso a Tokio & Check-in:</strong> Regreso en tren a Tokio a la hora de comer y nuevo registro en el <span class="hotel-highlight" data-hotel="otsuka">APA Hotel Yamanote Otsuka Ekimae Tower</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d11-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="11">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Roppongi & Zojoji:</strong> Visita al mirador de la zona de Roppongi y acercamiento al templo Zojoji con la Torre de Tokio de fondo en Daimon.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Zojoji+Temple" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Templo Zojoji
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Tokyo+Tower" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Torre de Tokio
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d11-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="11">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Reloj de Ghibli:</strong> Opción de acercarse al barrio de Shiodome para ver el gran reloj Ghibli iluminado.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Ghibli+Clock+Shiodome" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Reloj Ghibli
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="11" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 12 -->
+                <div class="day-card" id="day-card-12" data-image="images/tokyo.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 12 • Viernes 28 de Agosto</span>
+                        <h2>Bahía de Tokio y Despedida 🤖🌉</h2>
+                        <p class="day-subtitle">El Gundam gigante de Odaiba y últimas compras</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-12"></div></div>
+                        <span class="progress-text" id="text-12">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d12-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.18 6.16L3 21l2.84-1.18A9.86 9.86 0 0 0 12 22a10 10 0 0 0 10-10B10 10 0 0 0 12 2z"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="12">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Odaiba:</strong> Traslado en el monorraíl Yurikamome hasta la isla artificial de Odaiba para ver la estatua a tamaño real de Gundam, el edificio de FujiTV y las vistas del Rainbow Bridge.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Unicorn+Gundam+Statue+Odaiba" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Gundam Odaiba
+                                    </a>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Rainbow+Bridge+Tokyo" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Rainbow Bridge
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d12-2">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Tarde</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="12">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Últimas Compras / teamLab:</strong> Últimas compras por la ciudad o visitas pendientes a experiencias interactivas como teamLab Planets.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=teamLab+Planets+Tokyo" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        teamLab Planets
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item" data-id="d12-3">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Noche</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="12">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Última noche:</strong> Última noche de alojamiento en Tokio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="12" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+                <!-- DÍA 13 -->
+                <div class="day-card" id="day-card-13" data-image="images/tokyo.jpg">
+                    <div class="day-hero">
+                        <div class="day-hero-overlay"></div>
+                        <span class="day-badge">Día 13 • Sábado 29 de Agosto</span>
+                        <h2>Vuelo de Regreso ✈️</h2>
+                        <p class="day-subtitle">Haneda - Valencia (vía Lufthansa)</p>
+                    </div>
+                    <div class="day-progress">
+                        <div class="progress-bar"><div class="progress-fill" id="fill-13"></div></div>
+                        <span class="progress-text" id="text-13">0% completado</span>
+                    </div>
+                    <div class="day-timeline">
+                        <div class="timeline-item" data-id="d13-1">
+                            <div class="timeline-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+                            <div class="timeline-content">
+                                <div class="timeline-header">
+                                    <span class="time-tag">Mañana</span>
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" class="task-checkbox" data-day="13">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <p><strong>Vuelo de Regreso:</strong> Desplazamiento matutino hacia el Aeropuerto Internacional de Haneda para tomar el vuelo de Lufthansa de las 09:40 con destino final a Valencia.</p>
+                                <div class="item-actions">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Haneda+Airport+Terminal+3" target="_blank" class="map-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                        Mapa Haneda
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Notas / Diario -->
+                    <div class="day-notes-section">
+                        <h4>Diario de viaje / Notas 📝</h4>
+                        <textarea class="day-notes-input" data-day="13" placeholder="Escribe aquí tus recuerdos, notas de restaurantes, anécdotas del día..."></textarea>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Day navigation buttons -->
+            <div class="day-nav-buttons">
+                <button id="prev-day-btn" class="nav-day-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    Día anterior
+                </button>
+                <button id="next-day-btn" class="nav-day-btn">
+                    Siguiente día
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION: GASTOS -->
+        <section id="tab-gastos" class="tab-content">
+            <div class="section-title-area">
+                <h2>Control de Gastos 📊</h2>
+                <p>Registra y clasifica vuestros gastos del viaje</p>
+            </div>
+            
+            <!-- Resumen de Gastos -->
+            <div class="budget-summary-card">
+                <div class="summary-total">
+                    <span class="summary-label">Total Gastado (Aprox.)</span>
+                    <h2 id="budget-total-eur">0.00 €</h2>
+                    <p id="budget-total-jpy">0 ¥</p>
+                </div>
+                <div class="summary-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Nº de Gastos</span>
+                        <span class="stat-value" id="budget-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Tasa de Cambio</span>
+                        <span class="stat-value" id="budget-rate-display">1 € = 165 ¥</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Añadir Gasto -->
+            <div class="expense-form-card">
+                <h3>Añadir Nuevo Gasto 💸</h3>
+                <form id="expense-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expense-title">Concepto</label>
+                            <input type="text" id="expense-title" placeholder="Ej. Comida en Dotonbori" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expense-amount">Importe</label>
+                            <div class="amount-input-container">
+                                <input type="number" id="expense-amount" placeholder="Monto" step="any" required>
+                                <select id="expense-currency">
+                                    <option value="JPY">¥ (JPY)</option>
+                                    <option value="EUR">€ (EUR)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="expense-category">Categoría</label>
+                            <select id="expense-category">
+                                <option value="food">🍜 Comida</option>
+                                <option value="transport">🚇 Transporte</option>
+                                <option value="hotel">🏨 Alojamiento</option>
+                                <option value="shopping">🛍️ Compras</option>
+                                <option value="tickets">🎟️ Entradas</option>
+                                <option value="other">⚙️ Otros</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-expense-btn">Guardar Gasto</button>
+                </form>
+            </div>
+
+            <!-- Lista de Gastos -->
+            <div class="expenses-list-card">
+                <h3>Historial de Gastos 📜</h3>
+                <div class="expenses-list" id="expenses-list">
+                    <p class="empty-list-text">No hay gastos registrados todavía.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: EXTRAS -->
+        <section id="tab-extras" class="tab-content">
+            <div class="section-title-area">
+                <h2>Recomendaciones Extra ✨</h2>
+                <p>Lugares interesantes para añadir o improvisar en el viaje</p>
+            </div>
+
+            <!-- City Filter Chips -->
+            <div class="filter-chips">
+                <button class="chip active" data-filter="all">Todos</button>
+                <button class="chip" data-filter="tokio">Tokio</button>
+                <button class="chip" data-filter="kyoto">Kioto</button>
+                <button class="chip" data-filter="osaka">Osaka</button>
+                <button class="chip" data-filter="hiroshima">Hiroshima</button>
+                <button class="chip" data-filter="kamakura">Kamakura</button>
+                <button class="chip" data-filter="nara">Nara</button>
+            </div>
+
+            <div class="extras-grid">
+                <!-- Tokio Extras -->
+                <div class="extra-card" data-city="tokio">
+                    <span class="city-pill tokio">Tokio</span>
+                    <h3>Ocio tradicional y deportivo ⚾🎤</h3>
+                    <p>Si os sobra alguna tarde o noche, podéis improvisar buscando un <strong>onsen</strong> para relajaros, alquilando una sala privada de <strong>karaoke</strong> o descargando adrenalina en un <strong>centro de bateo</strong> local.</p>
+                </div>
+
+                <div class="extra-card" data-city="tokio">
+                    <span class="city-pill tokio">Tokio</span>
+                    <h3>Nakano Broadway y Mandarake 🎮⌚</h3>
+                    <p>Si Akihabara se queda corto, este centro comercial es un paraíso para perderse buscando juegos retro de Nintendo o rarezas de coleccionismo. Además, sus pasillos están llenos de tiendas de segunda mano especializadas en relojería donde podéis cazar relojes automáticos a muy buen precio.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Nakano+Broadway" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Mapa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="tokio">
+                    <span class="city-pill tokio">Tokio</span>
+                    <h3>Ginza y el Reloj Wako ⌚🏛️</h3>
+                    <p>Un paseo por el exclusivo barrio de Ginza para ver los escaparates de lujo. Es el hogar original de la marca Seiko: podréis ver el icónico reloj de la torre Wako e incluso visitar el Museo Seiko para repasar la historia de sus calibres mecánicos.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Seiko+Museum+Ginza" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Museo Seiko
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="tokio">
+                    <span class="city-pill tokio">Tokio</span>
+                    <h3>La ruta de "Your Name" 🎬⛩️</h3>
+                    <p>Si os gusta el cine de animación de Makoto Shinkai, podéis acercaros a las icónicas escaleras rojas del Santuario Suga en el barrio de Yotsuya para ver en la vida real el lugar del famosísimo final de la película.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Suga+Shrine+Steps+Your+Name" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Escaleras Suga
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kioto Extras -->
+                <div class="extra-card" data-city="kyoto">
+                    <span class="city-pill kyoto">Kioto</span>
+                    <h3>Barrio de Miyagawacho 🌸🏮</h3>
+                    <p>Es una alternativa excelente y bastante más tranquila que Gion. Perfecto para pasear al atardecer, cenar en un sitio tradicional y tener la posibilidad de cruzaros con geishas o maikos.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Miyagawacho+Kyoto" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Mapa
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="kyoto">
+                    <span class="city-pill kyoto">Kioto</span>
+                    <h3>Palacio Imperial de Kioto 👑🌳</h3>
+                    <p>Si madrugáis y el día cunde, es una visita muy imponente para hacer de día. Podréis pasear por sus inmensos jardines perimetrales de gravilla y pinos esculpidos (que además son de acceso gratuito).</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kyoto+Imperial+Palace" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Palacio Imperial
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="kyoto">
+                    <span class="city-pill kyoto">Kioto</span>
+                    <h3>Museo Internacional del Manga 📚🖼️</h3>
+                    <p>Una parada cultural y visualmente muy chula. Tienen paredes kilométricas forradas de tomos históricos y actuales de manga. Es un comodín ideal por si os pilla algún chaparrón veraniego.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kyoto+International+Manga+Museum" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Museo Manga
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Osaka Extras -->
+                <div class="extra-card" data-city="osaka">
+                    <span class="city-pill osaka">Osaka</span>
+                    <h3>Buceo en Den-den Town 🎮🔍</h3>
+                    <p>Cuando estéis por Nippombashi, dedicad un tiempo extra a buscar tiendas de la cadena <strong>Surugaya</strong>. Tienen un stock inmenso y clasificado a la perfección si queréis rebuscar entre catálogos antiguos de Wii, DS o Switch.</p>
+                </div>
+
+                <div class="extra-card" data-city="osaka">
+                    <span class="city-pill osaka">Osaka</span>
+                    <h3>Mercado Kuromon Ichiba 🍢🥩</h3>
+                    <p>Conocido como "la cocina de Osaka". Es una calle comercial techada espectacular para ir parando de puesto en puesto probando comida callejera recién hecha: takoyaki, brochetas de carne de Kobe, vieiras a la parrilla, etc.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kuromon+Ichiba+Market+Osaka" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Mercado Kuromon
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="osaka">
+                    <span class="city-pill osaka">Osaka</span>
+                    <h3>Arcades retro en Shinsekai 👾🕹️</h3>
+                    <p>Después de ver la torre Tsutenkaku, la zona está llena de salones recreativos con un aire "showa" (retro). Podéis echar unas partidas a juegos de lucha clásicos (Street Fighter) o probar suerte en los cientos de gachapones.</p>
+                </div>
+
+                <!-- Hiroshima Extras -->
+                <div class="extra-card" data-city="hiroshima">
+                    <span class="city-pill hiroshima">Hiroshima</span>
+                    <h3>Museo y Fábrica de Mazda 🚗🔧</h3>
+                    <p>La sede central de Mazda está en Hiroshima. Si os llama la atención el mundo del motor y la mecánica de los coches, ofrecen tours muy recomendables (es necesario reservar en su web) donde se visita incluso la línea de ensamblaje real.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Mazda+Museum+Hiroshima" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Museo Mazda
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="hiroshima">
+                    <span class="city-pill hiroshima">Hiroshima</span>
+                    <h3>Okonomimura 🥞🍜</h3>
+                    <p>Literalmente "el pueblo del okonomiyaki". Es un edificio entero con varias plantas repletas exclusivamente de pequeños puestos donde preparan okonomiyaki al estilo de Hiroshima (con fideos yakisoba integrados). El ambiente es increíble.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Okonomimura+Hiroshima" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Okonomimura
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kamakura Extras -->
+                <div class="extra-card" data-city="kamakura">
+                    <span class="city-pill kamakura">Kamakura</span>
+                    <h3>Templo Hokokuji (Bambú y Té) 🎋🍵</h3>
+                    <p>Si queréis ver bambú con tranquilidad, este templo tiene un bosque propio espectacular y mucho menos masificado que Arashiyama. Además, podéis sentaros a tomar té matcha contemplándolo.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Hokokuji+Temple+Kamakura" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Templo Hokokuji
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="kamakura">
+                    <span class="city-pill kamakura">Kamakura</span>
+                    <h3>Santuario Zeniarai Benzaiten 💰🧼</h3>
+                    <p>Un curioso santuario escondido dentro de una cueva. La tradición dicta que debes lavar tus monedas y billetes en el agua de su manantial sagrado para que tu dinero se multiplique en el futuro.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Zeniarai+Benzaiten+Ugafuku+Shrine+Kamakura" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Santuario Zeniarai
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nara Extras -->
+                <div class="extra-card" data-city="nara">
+                    <span class="city-pill nara">Nara</span>
+                    <h3>Santuario Kasuga Taisha 🪨🕯️</h3>
+                    <p>Una vez hayáis visto el Buda del Todai-ji, seguid caminando por el parque. El sendero hacia este santuario discurre por un bosque místico rodeado por miles de linternas de piedra cubiertas de musgo, y el santuario luce cientos de linternas de bronce colgando de sus aleros.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Kasuga+Taisha+Shrine+Nara" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Kasuga Taisha
+                        </a>
+                    </div>
+                </div>
+
+                <div class="extra-card" data-city="nara">
+                    <span class="city-pill nara">Nara</span>
+                    <h3>Monte Wakakusa ⛰️🌅</h3>
+                    <p>Una colina verde y despejada justo detrás del parque de Nara. La subida es muy suave y ofrece una vista panorámica espectacular de toda la ciudad de Nara, ideal para cuadrarla con el atardecer antes de volver a Kioto.</p>
+                    <div class="item-actions">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Mount+Wakakusa+Nara" target="_blank" class="map-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Monte Wakakusa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: HOTELES -->
+        <section id="tab-hoteles" class="tab-content">
+            <div class="section-title-area">
+                <h2>Nuestros Hoteles 🏨</h2>
+                <p>Información rápida de las estancias y direcciones</p>
+            </div>
+
+            <div class="hotels-list">
+                <!-- Hotel 1 -->
+                <div class="hotel-card" id="hotel-otsuka">
+                    <div class="hotel-card-header">
+                        <span class="hotel-city-badge">Tokio</span>
+                        <h3>APA Hotel Yamanote Otsuka Ekimae Tower</h3>
+                    </div>
+                    <div class="hotel-card-body">
+                        <p class="hotel-dates">📅 <strong>Estancia:</strong> 17 Ago - 21 Ago (4 noches) & 27 Ago - 29 Ago (2 noches)</p>
+                        <p class="hotel-address">📍 <strong>Dirección:</strong> Toshima-ku, Otsuka (Muy cerca de la Yamanote Line)</p>
+                        <p class="hotel-notes">💡 <strong>Destacable:</strong> Hotel en torre alta con baño público tipo Onsen en las instalaciones para relajarse tras caminar.</p>
+                        <div class="item-actions">
+                            <a href="https://www.google.com/maps/search/?api=1&query=APA+Hotel+Yamanote+Otsuka+Ekimae+Tower" target="_blank" class="map-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Abrir en Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 2 -->
+                <div class="hotel-card" id="hotel-hiroshima">
+                    <div class="hotel-card-header">
+                        <span class="hotel-city-badge">Hiroshima</span>
+                        <h3>WeBase Hiroshima</h3>
+                    </div>
+                    <div class="hotel-card-body">
+                        <p class="hotel-dates">📅 <strong>Estancia:</strong> 21 Ago - 22 Ago (1 noche)</p>
+                        <p class="hotel-address">📍 <strong>Dirección:</strong> Naka Ward, Centro de Hiroshima</p>
+                        <p class="hotel-notes">💡 <strong>Destacable:</strong> Alojamiento moderno y cómodo situado muy cerca del Parque de la Paz y de las calles de okonomiyakis.</p>
+                        <div class="item-actions">
+                            <a href="https://www.google.com/maps/search/?api=1&query=WeBase+Hiroshima" target="_blank" class="map-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Abrir en Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 3 -->
+                <div class="hotel-card" id="hotel-osaka">
+                    <div class="hotel-card-header">
+                        <span class="hotel-city-badge">Osaka</span>
+                        <h3>APA Hotel & Resort Midosuji Hommachi Ekimae Tower</h3>
+                    </div>
+                    <div class="hotel-card-body">
+                        <p class="hotel-dates">📅 <strong>Estancia:</strong> 22 Ago - 24 Ago (2 noches)</p>
+                        <p class="hotel-address">📍 <strong>Dirección:</strong> Chuo Ward, Hommachi (Centro financiero y bien conectado)</p>
+                        <p class="hotel-notes">💡 <strong>Destacable:</strong> Gran resort con torre, muy moderno, con piscina y excelentes conexiones de metro hacia Namba y Umeda.</p>
+                        <div class="item-actions">
+                            <a href="https://www.google.com/maps/search/?api=1&query=APA+Hotel+Resort+Midosuji+Hommachi+Ekimae+Tower" target="_blank" class="map-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Abrir en Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel 4 -->
+                <div class="hotel-card" id="hotel-kyoto">
+                    <div class="hotel-card-header">
+                        <span class="hotel-city-badge">Kioto</span>
+                        <h3>Hotel M's Plus Shijo Omiya</h3>
+                    </div>
+                    <div class="hotel-card-body">
+                        <p class="hotel-dates">📅 <strong>Estancia:</strong> 24 Ago - 27 Ago (3 noches)</p>
+                        <p class="hotel-address">📍 <strong>Dirección:</strong> Nakagyo Ward, Shijo Omiya (Perfecto para buses e ir a Arashiyama/Gion)</p>
+                        <p class="hotel-notes">💡 <strong>Destacable:</strong> Hotel de diseño contemporáneo, muy limpio, situado en un nodo de transporte clave para recorrer todo Kioto.</p>
+                        <div class="item-actions">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Ms+Plus+Shijo+Omiya+Kyoto" target="_blank" class="map-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                Abrir en Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INFO ÚTIL -->
+        <section id="tab-info" class="tab-content">
+            <div class="section-title-area">
+                <h2>Información Útil ℹ️</h2>
+                <p>Preparativos, conversión de moneda y ayuda para el viaje</p>
+            </div>
+
+            <div class="info-sections">
+                <!-- Conversor de Divisas -->
+                <div class="info-card">
+                    <h3>Conversor de Divisas 💶⇄🇯🇵</h3>
+                    <p class="currency-intro">Escribe en cualquier campo para convertir de forma instantánea:</p>
+                    <div class="converter-grid">
+                        <div class="converter-field">
+                            <label for="conv-eur">Euros (€)</label>
+                            <input type="number" id="conv-eur" placeholder="0.00" step="any">
+                        </div>
+                        <div class="converter-arrows">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 3 4 4-4 4"></path><path d="M3 7h18"></path><path d="m7 21-4-4 4-4"></path><path d="M21 17H3"></path></svg>
+                        </div>
+                        <div class="converter-field">
+                            <label for="conv-jpy">Yenes (¥)</label>
+                            <input type="number" id="conv-jpy" placeholder="0" step="any">
+                        </div>
+                    </div>
+                    <div class="converter-rate-settings">
+                        <label for="conv-rate">Tasa de cambio personalizada:</label>
+                        <div class="rate-input-row">
+                            <span>1 EUR = </span>
+                            <input type="number" id="conv-rate" value="165" step="any">
+                            <span>JPY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checklist de Preparativos -->
+                <div class="info-card">
+                    <h3>Antes de Volar ✈️</h3>
+                    <ul class="checklist-info">
+                        <li>
+                            <label class="info-check-container">
+                                <input type="checkbox" class="info-checkbox" data-info-id="pre-1">
+                                <span class="info-checkmark"></span>
+                                <span>Rellenar <strong>Visit Japan Web</strong> (Aduanas e Inmigración)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="info-check-container">
+                                <input type="checkbox" class="info-checkbox" data-info-id="pre-2">
+                                <span class="info-checkmark"></span>
+                                <span>Comprar y activar la <strong>eSIM de datos</strong></span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="info-check-container">
+                                <input type="checkbox" class="info-checkbox" data-info-id="pre-3">
+                                <span class="info-checkmark"></span>
+                                <span>Llevar tarjeta <strong>Revolut</strong> y algo de efectivo físico (Yenes)</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="info-check-container">
+                                <input type="checkbox" class="info-checkbox" data-info-id="pre-4">
+                                <span class="info-checkmark"></span>
+                                <span>Añadir la tarjeta <strong>Suica/Pasmo</strong> a Apple Wallet / Google Wallet</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="info-check-container">
+                                <input type="checkbox" class="info-checkbox" data-info-id="pre-5">
+                                <span class="info-checkmark"></span>
+                                <span>Llevar el <strong>adaptador de enchufe tipo A</strong> (plano americano)</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frases Básicas -->
+                <div class="info-card">
+                    <h3>Japonés de Supervivencia 🗣️</h3>
+                    <div class="phrase-grid">
+                        <div class="phrase-row">
+                            <span class="phrase-jp">Sumimasen</span>
+                            <span class="phrase-es">Disculpe / Perdón</span>
+                        </div>
+                        <div class="phrase-row">
+                            <span class="phrase-jp">Arigatou gozaimasu</span>
+                            <span class="phrase-es">Muchas gracias</span>
+                        </div>
+                        <div class="phrase-row">
+                            <span class="phrase-jp">Kore wa ikura desu ka?</span>
+                            <span class="phrase-es">¿Cuánto cuesta esto?</span>
+                        </div>
+                        <div class="phrase-row">
+                            <span class="phrase-jp">O-kaikei o kudasai</span>
+                            <span class="phrase-es">La cuenta, por favor</span>
+                        </div>
+                        <div class="phrase-row">
+                            <span class="phrase-jp">Mizu o kudasai</span>
+                            <span class="phrase-es">Agua, por favor</span>
+                        </div>
+                        <div class="phrase-row">
+                            <span class="phrase-jp">Eigo ga hanasemasu ka?</span>
+                            <span class="phrase-es">¿Hablas inglés?</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teléfonos y Emergencias -->
+                <div class="info-card warning-card">
+                    <h3>Contactos de Emergencia 🚨</h3>
+                    <p>🚑 <strong>Ambulancia / Bomberos:</strong> 119</p>
+                    <p>👮 <strong>Policía:</strong> 110</p>
+                    <p>🇪🇸 <strong>Embajada de España en Tokio:</strong> +81 3-3583-8531</p>
+                    <p>🩺 <strong>Seguro médico:</strong> Tener a mano el PDF de la póliza contratada.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="app-nav">
+        <button class="nav-item active" data-tab="itinerario">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Itinerario</span>
+        </button>
+        <button class="nav-item" data-tab="gastos">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            <span>Gastos</span>
+        </button>
+        <button class="nav-item" data-tab="extras">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span>Extras</span>
+        </button>
+        <button class="nav-item" data-tab="hoteles">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v3H3v-3z"></path><path d="M19 14V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v8"></path><path d="M9 8h6"></path></svg>
+            <span>Hoteles</span>
+        </button>
+        <button class="nav-item" data-tab="info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span>Info</span>
+        </button>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>

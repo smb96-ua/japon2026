@@ -1,0 +1,1329 @@
+/* --- CSS Principal: Guía Japón 2026 --- */
+
+:root {
+    /* Paleta Oscura (Por defecto, Premium) */
+    --bg-primary: #0b111e;
+    --bg-secondary: #131b2e;
+    --bg-card: #1c263e;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --accent: #ff4a7d; /* Rosa Sakura */
+    --accent-glow: rgba(255, 74, 125, 0.15);
+    --accent-orange: #ff5722; /* Naranja Torii */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --nav-bg: rgba(11, 17, 30, 0.85);
+    
+    /* Fuentes y Dimensiones */
+    --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --header-height: 65px;
+    --nav-height: 65px;
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-theme {
+    /* Paleta Clara */
+    --bg-primary: #faf8f5;
+    --bg-secondary: #f3eee7;
+    --bg-card: #ffffff;
+    --text-primary: #1c1917;
+    --text-secondary: #706e6b;
+    --accent: #d91b5c; /* Rosa Sakura más oscuro para contraste */
+    --accent-glow: rgba(217, 27, 92, 0.08);
+    --accent-orange: #e04a1d;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --shadow-color: rgba(28, 25, 23, 0.06);
+    --nav-bg: rgba(250, 248, 245, 0.9);
+}
+
+/* --- Estilos Globales & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom, 20px));
+    padding-top: var(--header-height);
+}
+
+/* Ocultar scrollbars */
+::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header --- */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    padding-top: env(safe-area-inset-top, 0px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 12px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.jp-char {
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent));
+    color: white;
+    font-weight: 800;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    letter-spacing: 1px;
+}
+
+.logo-area h1 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Reloj Dual */
+.clock-widget {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.clock-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.clock-label {
+    opacity: 0.5;
+    font-size: 8.5px;
+}
+
+.clock-time {
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.clock-divider {
+    opacity: 0.2;
+    color: var(--text-primary);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.icon-btn:active {
+    background-color: var(--bg-secondary);
+    transform: scale(0.95);
+}
+
+/* Control del tema */
+.sun-icon { display: none; }
+.moon-icon { display: block; }
+
+.light-theme .sun-icon { display: block; }
+.light-theme .moon-icon { display: none; }
+
+/* --- Main Area --- */
+.app-main {
+    flex: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* --- Navigation Tabs --- */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Bottom Nav --- */
+.app-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--nav-height) + env(safe-area-inset-bottom, 20px));
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    z-index: 100;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    width: 20%;
+    transition: var(--transition);
+    padding: 6px 0;
+}
+
+.nav-item svg {
+    transition: var(--transition);
+}
+
+.nav-item.active {
+    color: var(--accent);
+}
+
+.nav-item.active svg {
+    transform: translateY(-2px);
+    stroke: var(--accent);
+}
+
+/* --- SECTION 1: ITINERARIO --- */
+
+/* Day Selector */
+.day-selector-container {
+    margin: -16px -16px 16px -16px;
+    padding: 12px 16px;
+    background-color: var(--bg-primary);
+    position: sticky;
+    top: var(--header-height);
+    z-index: 90;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.day-selector {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 4px;
+}
+
+.day-tab {
+    flex: 0 0 62px;
+    height: 52px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.day-tab span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.day-tab small {
+    font-size: 9px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.day-tab.active {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+/* Days Container & Cards */
+.days-container {
+    position: relative;
+    width: 100%;
+}
+
+.day-card {
+    display: none;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    margin-bottom: 16px;
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.day-card.active {
+    display: block;
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Day Hero Banner */
+.day-hero {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.day-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 17, 30, 0.95) 0%, rgba(11, 17, 30, 0.3) 60%, rgba(11, 17, 30, 0.1) 100%);
+}
+
+.light-theme .day-hero-overlay {
+    background: linear-gradient(to top, rgba(28, 25, 23, 0.9) 0%, rgba(28, 25, 23, 0.2) 70%, rgba(0, 0, 0, 0.0) 100%);
+}
+
+.day-badge {
+    position: relative;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.day-hero h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.day-subtitle {
+    position: relative;
+    z-index: 2;
+    font-size: 12px;
+    opacity: 0.85;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* Progress Area */
+.day-progress {
+    padding: 16px 20px 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background-color: var(--bg-secondary);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-orange));
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* Timeline Layout */
+.day-timeline {
+    padding: 16px 20px 20px 20px;
+    position: relative;
+}
+
+.day-timeline::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 27px;
+    width: 2px;
+    bottom: 24px;
+    background-color: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: relative;
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+    background-color: var(--bg-card);
+    border: 2px solid var(--text-secondary);
+    border-radius: 50%;
+    margin-left: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.timeline-icon svg {
+    display: none;
+    color: white;
+}
+
+.timeline-item.completed .timeline-icon {
+    border-color: var(--accent);
+    background-color: var(--accent);
+}
+
+.timeline-item.completed .timeline-icon svg {
+    display: block;
+}
+
+.timeline-content {
+    flex: 1;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    transition: var(--transition);
+}
+
+.timeline-item.completed .timeline-content {
+    opacity: 0.75;
+    border-color: var(--accent-glow);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.time-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    background-color: var(--accent-glow);
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.timeline-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.hotel-highlight {
+    font-weight: 700;
+    color: var(--accent-orange);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--accent-orange);
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.map-btn:active {
+    background-color: var(--bg-primary);
+    transform: scale(0.95);
+}
+
+.map-btn svg {
+    stroke: var(--text-secondary);
+}
+
+/* Checkbox Personalizado */
+.checkbox-container {
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--accent);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Opcional badge styling */
+.optional-item {
+    border-left: 3px solid var(--accent-orange);
+}
+
+.optional-tag {
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 4px;
+}
+
+/* Diario de Viaje por Día */
+.day-notes-section {
+    padding: 16px 20px 20px 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.light-theme .day-notes-section {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.day-notes-section h4 {
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.day-notes-input {
+    width: 100%;
+    height: 75px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 10px;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 12px;
+    line-height: 1.4;
+    resize: none;
+    transition: var(--transition);
+}
+
+.day-notes-input:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 5px var(--accent-glow);
+}
+
+/* Day Navigation Buttons */
+.day-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.nav-day-btn {
+    flex: 1;
+    height: 44px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nav-day-btn:active {
+    background-color: var(--bg-secondary);
+    transform: scale(0.97);
+}
+
+/* --- SECTION: GASTOS & PRESUPUESTO --- */
+.budget-summary-card {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.summary-total {
+    margin-bottom: 12px;
+}
+
+.summary-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-total h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-top: 4px;
+    letter-spacing: -0.5px;
+}
+
+.summary-total p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.summary-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.stat-label {
+    font-size: 10px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.expense-form-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    margin-bottom: 16px;
+}
+
+.expense-form-card h3, .expenses-list-card h3 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.form-group input, .form-group select {
+    height: 42px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0 12px;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 13px;
+    width: 100%;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.amount-input-container {
+    display: flex;
+    gap: 6px;
+}
+
+.amount-input-container input {
+    flex: 1;
+}
+
+.amount-input-container select {
+    flex: 0 0 80px;
+    text-align: center;
+}
+
+.submit-expense-btn {
+    width: 100%;
+    height: 44px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-orange));
+    border: none;
+    color: white;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 4px;
+    font-family: var(--font-main);
+}
+
+.submit-expense-btn:active {
+    transform: scale(0.97);
+}
+
+.expenses-list-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    margin-bottom: 24px;
+}
+
+.expenses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.empty-list-text {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 24px 0;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 10px 12px;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.expense-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.expense-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--bg-card);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.expense-info {
+    min-width: 0;
+}
+
+.expense-info h4 {
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expense-info span {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.expense-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.expense-amount-val {
+    text-align: right;
+}
+
+.expense-amount-val-eur {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.expense-amount-val-jpy {
+    font-size: 10px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.delete-expense-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.delete-expense-btn:active {
+    background-color: rgba(239, 68, 68, 0.1);
+    transform: scale(0.9);
+}
+
+/* --- SECTION 2: EXTRAS --- */
+.section-title-area {
+    margin-bottom: 20px;
+}
+
+.section-title-area h2 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.section-title-area p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+/* Chips Filtro */
+.filter-chips {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.chip {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 20px;
+    font-family: var(--font-main);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.chip.active {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+/* Grid de extras */
+.extras-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.extra-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.extra-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.extra-card p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.city-pill {
+    align-self: flex-start;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* Colores de ciudad específicos */
+.city-pill.tokio { background-color: #ff4a7d; }
+.city-pill.kyoto { background-color: #dfa612; }
+.city-pill.osaka { background-color: #3b82f6; }
+.city-pill.hiroshima { background-color: #10b981; }
+.city-pill.kamakura { background-color: #8b5cf6; }
+.city-pill.nara { background-color: #ec4899; }
+
+/* --- SECTION 3: HOTELES --- */
+.hotels-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hotel-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.hotel-card.highlight-flash {
+    animation: flashBorder 1.5s ease-out;
+}
+
+@keyframes flashBorder {
+    0% { border-color: var(--accent-orange); box-shadow: 0 0 15px var(--accent-orange); }
+    100% { border-color: var(--border-color); box-shadow: none; }
+}
+
+.hotel-card-header {
+    padding: 16px 20px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hotel-city-badge {
+    align-self: flex-start;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: var(--accent);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.hotel-card-header h3 {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.hotel-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.hotel-dates {
+    color: var(--text-primary);
+}
+
+.hotel-address, .hotel-notes {
+    color: var(--text-secondary);
+}
+
+/* --- SECTION 4: INFO ÚTIL & CONVERSOR --- */
+.info-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+}
+
+.info-card h3 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+/* Estilos del Conversor */
+.currency-intro {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.converter-grid {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.converter-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.converter-field label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.converter-field input {
+    height: 42px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0 12px;
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 700;
+    width: 100%;
+}
+
+.converter-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    padding-top: 16px;
+}
+
+.converter-rate-settings {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.converter-rate-settings label {
+    font-size: 10.5px;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.rate-input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.rate-input-row input {
+    width: 75px;
+    height: 30px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    text-align: center;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Checklist de Info */
+.checklist-info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-check-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.info-check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.info-checkmark {
+    flex: 0 0 18px;
+    height: 18px;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    margin-top: 1px;
+    transition: var(--transition);
+}
+
+.info-check-container input:checked ~ .info-checkmark {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+.info-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.info-check-container input:checked ~ .info-checkmark:after {
+    display: block;
+}
+
+.info-check-container .info-checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.info-check-container input:checked ~ span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Phrase Grid */
+.phrase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.phrase-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 12.5px;
+}
+
+.phrase-row:last-child {
+    border-bottom: none;
+}
+
+.phrase-jp {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.phrase-es {
+    color: var(--text-secondary);
+    text-align: right;
+}
+
+/* Warning Card */
+.warning-card {
+    border-left: 4px solid var(--accent-orange);
+}
+
+.warning-card h3 {
+    color: var(--accent-orange);
+}
+
+.warning-card p {
+    font-size: 12.5px;
+    margin-bottom: 8px;
+}
+
+.warning-card p:last-child {
+    margin-bottom: 0;
+}
